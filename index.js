@@ -28,12 +28,12 @@ app.post("/split-payments/compute", async (req,res) => {
             res.json({response: 'the SplitInfo array must exceed 20 elements '});
         }else{
 
-            const { resdata, Finalbalance} = await operations(req.body);
+            const { newarray, Finalbalance} = await operations(req.body);
             // console.log(req.body.SplitInfo);
             const response = {
                 ID: req.body["ID"],
                 Balance: Finalbalance,
-                SplitBreakdown: resdata
+                SplitBreakdown: newarray
             }
             res.status = 200;
             res.json({response});
