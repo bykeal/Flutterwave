@@ -87,6 +87,5 @@ Response sample
             "SplitEntityId": "LNPYACC0016",
             "Amount": 558.72
         }
-
     ]
 }
