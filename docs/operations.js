@@ -84,9 +84,9 @@ const operations = async (data) => {
 
     const Finalbalance = Amount-rateamount;
 
-    let Amount = 0;
-    let Balance = 0;
-    let rateamount = 0;
+    Amount = 0;
+    Balance = 0;
+    rateamount = 0;
 
     return { resdata, Finalbalance };
 }
