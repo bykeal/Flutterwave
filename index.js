@@ -1,4 +1,5 @@
 const express = require('express');
+const port = process.env.PORT || 8800;
 const dotenv = require("dotenv");
 const { operations } = require("./docs/operations");
 const app = express();
@@ -50,6 +51,6 @@ app.use((err,req,res,next) => {
 
 
 
-app.listen(8800, () => {
+app.listen(port, () => {
     console.log('live');
 });
