@@ -22,7 +22,7 @@ app.get("/", (req,res) => {
 
 
 app.post("/split-payments/compute", async (req,res) => {
-    if (req.body.length === 0) {
+    if (Object.keys(req.body).length === 0) {
         res.status = 404;
         res.json({response: 'Please provide split payment entities'});
     } else {
