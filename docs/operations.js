@@ -1,4 +1,4 @@
-let Amount ;
+let Amount;
 let Balance = 0;
 let rateamount = 0;
 let flatarray = [];
@@ -84,7 +84,7 @@ const operations = async (data) => {
 
     const Finalbalance = Amount-rateamount;
 
-    let Amount ;
+    let Amount = 0;
     let Balance = 0;
     let rateamount = 0;
 
