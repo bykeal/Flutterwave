@@ -84,6 +84,7 @@ const operations = async (data) => {
 
     const newarray = {...resdata};
 
+
     const Finalbalance = Amount-rateamount;
 
     Amount = 0;
@@ -92,6 +93,7 @@ const operations = async (data) => {
     flatarray = [];
     ratioarray = [];
     percentarray = [];
+    resdata =[];
 
     return { newarray, Finalbalance };
 }
