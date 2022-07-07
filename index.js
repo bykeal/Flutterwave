@@ -15,6 +15,12 @@ dotenv.config();
 app.use(bodyParser.json());
 
 //middleware
+app.get("/", (req,res) => {
+    res.status = 200;
+    res.json({response: "server is live"});
+});
+
+
 app.post("/split-payments/compute", async (req,res) => {
     if(req.body.SplitInfo.length > 0){
         if(req.body.SplitInfo.length > 20){
