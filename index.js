@@ -22,27 +22,33 @@ app.get("/", (req,res) => {
 
 
 app.post("/split-payments/compute", async (req,res) => {
-    if(req.body.SplitInfo.length > 0){
-        if(req.body.SplitInfo.length > 20){
-            res.status = 200;
-            res.json({response: 'the SplitInfo array must exceed 20 elements '});
-        }else{
+    if (req.body === "") {
+        res.status = 404;
+        res.json({response: 'Please provide split payment entities'});
+    } else {
+        if(req.body.SplitInfo.length > 0){
+            if(req.body.SplitInfo.length > 20){
+                res.status = 200;
+                res.json({response: 'the SplitInfo array must exceed 20 elements '});
+            }else{
 
-            const { newarray, Finalbalance} = await operations(req.body);
-            // console.log(req.body.SplitInfo);
-            const response = {
-                ID: req.body["ID"],
-                Balance: Finalbalance,
-                SplitBreakdown: newarray
+                const { newarray, Finalbalance} = await operations(req.body);
+                // console.log(req.body.SplitInfo);
+                const response = {
+                    ID: req.body["ID"],
+                    Balance: Finalbalance,
+                    SplitBreakdown: newarray
+                }
+                res.status = 200;
+                res.json({response});
+
             }
+        }else{
             res.status = 200;
-            res.json({response});
-
+            res.json({response: 'the SplitInfo array must contain an element '});
         }
-    }else{
-        res.status = 200;
-        res.json({response: 'the SplitInfo array must contain an element '});
     }
+        
    
 });
 
