@@ -9,7 +9,7 @@ This API has two endpoint.
 It runs a get request showing that the server is live.
 
 
-### /split-payments/compute`
+### /split-payments/compute
 
 A post request and it take an object containing payments to spilt as a REQ and returns the spilted payments.
 
